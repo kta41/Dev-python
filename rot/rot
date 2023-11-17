@@ -1,0 +1,45 @@
+#!/usr/bin/python3
+
+import time
+import sys
+
+alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+def loading():
+    signs = ["|", "/", "-", "\\"]
+    for i in range(50):
+        print(signs[i % 4].format(i % 4), end='\r')
+        time.sleep(0.1)
+
+def cifrar(key, string):
+    resultado = ""
+    for char in string:
+        if char.lower() in alfabeto:
+            cOriginal = alfabeto.index(char.lower())
+            cCifrado = (cOriginal + key) % len(alfabeto)
+            resultado += alfabeto[cCifrado]
+        else:
+            resultado += char
+    loading()
+    return resultado
+
+def cesar(string):
+    print("")
+    for key in range(0, 27):
+        resultado = ""
+        for char in string:
+            if char.lower() in alfabeto:
+                cOriginal = alfabeto.index(char.lower())
+                cCifrado = (cOriginal + key) % len(alfabeto)
+                resultado += alfabeto[cCifrado]
+            else:
+                resultado += char
+        print(f"[*] ROT{key}: {resultado}")
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        input_string = ' '.join(sys.argv[1:])
+        cesar(input_string)
+    else:
+        print("Bienvenido a ROT:\n")
+        inputuser()
