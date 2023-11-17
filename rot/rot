@@ -46,4 +46,4 @@ if __name__ == "__main__":
         input_string = ' '.join(sys.argv[1:])
         cesar(input_string)
     else:
-        print("Añade un argumento.\n")
+        print("\n[x] Añade un argumento")
