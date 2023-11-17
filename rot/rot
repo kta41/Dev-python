@@ -3,7 +3,7 @@
 import time
 import sys
 
-alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t"]
 
 def loading():
     signs = ["|", "/", "-", "\\"]
@@ -23,12 +23,17 @@ def cifrar(key, string):
     loading()
     return resultado
 
+def quitar_tilde(vocal_con_tilde):
+    tildes = {'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u', 'à': 'a', 'è': 'e', 'ì': 'i', 'ò': 'o', 'ù': 'u'}
+    return tildes.get(vocal_con_tilde, vocal_con_tilde)
+
 def cesar(string):
     print("")
     for key in range(0, 27):
         resultado = ""
         for char in string:
-            if char.lower() in alfabeto:
+            if char.lower() in alfabeto or char.lower() in ['á', 'à', 'â', 'ä', 'é', 'è', 'ê', 'ë', 'í', 'ì', 'í', 'ò', 'ô', 'ö', 'ú', 'ù', 'û', 'ü']:
+                char = quitar_tilde(char.lower())
                 cOriginal = alfabeto.index(char.lower())
                 cCifrado = (cOriginal + key) % len(alfabeto)
                 resultado += alfabeto[cCifrado]
@@ -41,5 +46,4 @@ if __name__ == "__main__":
         input_string = ' '.join(sys.argv[1:])
         cesar(input_string)
     else:
-        print("Bienvenido a ROT:\n")
-        inputuser()
+        print("Añade un argumento.\n")
