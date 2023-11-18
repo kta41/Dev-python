@@ -4,30 +4,12 @@ import time
 import sys
 import argparse
 
-alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 # Alfabeto con ñ
 alfabeto_con_enye = [chr(i) for i in range(ord('a'), ord('n') + 1)] + ['ñ'] + [chr(i) for i in range(ord('o'), ord('z') + 1)]
 
 # Alfabeto sin ñ
 alfabeto_sin_enye = [chr(i) for i in range(ord('a'), ord('z') + 1)]
 
-def loading():
-    signs = ["|", "/", "-", "\\"]
-    for i in range(50):
-        print(signs[i % 4].format(i % 4), end='\r')
-        time.sleep(0.1)
-
-def cifrar(key, string, alfabeto):
-    resultado = ""
-    for char in string:
-        if char.lower() in alfabeto:
-            cOriginal = alfabeto.index(char.lower())
-            cCifrado = (cOriginal + key) % len(alfabeto)
-            resultado += alfabeto[cCifrado]
-        else:
-            resultado += char
-    loading()
-    return resultado
 
 def quitar_tilde(vocal_con_tilde):
     tildes = {'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u', 'à': 'a', 'è': 'e', 'ì': 'i', 'ò': 'o', 'ù': 'u'}
