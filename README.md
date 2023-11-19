@@ -4,7 +4,7 @@ Scripts útiles para tareas de criptografía
 ## rot
 
 Pequeño script en python que nos permite analizar cadenas de texto codificadas en Cesar para todas las variables de ROT.
-Incluye la ñ.
+Incluye la ñ con la flag '-ñ'.
 
 Descargar la carpeta rot y en su directorio ejecutar: 
 
