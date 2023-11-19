@@ -11,7 +11,7 @@ alfabeto_sin_enye = [chr(i) for i in range(ord('a'), ord('z') + 1)]
 
 
 def quitar_tilde(vocal_con_tilde):
-    tildes = {'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u', 'à': 'a', 'è': 'e', 'ì': 'i', 'ò': 'o', 'ù': 'u'}
+    tildes = {'á': 'a', 'â': 'a',  'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u', 'à': 'a', 'è': 'e', 'ì': 'i', 'ò': 'o', 'ù': 'u'}
     return tildes.get(vocal_con_tilde, vocal_con_tilde)
 
 def cesar(string, output_file=None, use_enye=False):
@@ -21,7 +21,7 @@ def cesar(string, output_file=None, use_enye=False):
     for key in range(0, len(alfabeto)):
         resultado = ""
         for char in string:
-            if char.lower() in alfabeto or char.lower() in ['á', 'à', 'â', 'ä', 'é', 'è', 'ê', 'ë', 'í', 'ì', 'í', 'ò', 'ô', 'ö', 'ú', 'ù', 'û', 'ü']:
+            if char.lower() in alfabeto or char.lower() in ['á', 'à', 'â', 'ä', 'é', 'è', 'ê', 'ë', 'í', 'ì', 'í', 'ó', 'ò', 'ô', 'ö', 'ú', 'ù', 'û', 'ü']:
                 char = quitar_tilde(char.lower())
                 cOriginal = alfabeto.index(char.lower())
                 cCifrado = (cOriginal + key) % len(alfabeto)
