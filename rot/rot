@@ -36,9 +36,9 @@ def cesar(string, output_file=None, use_enye=False):
 
 def main():
     parser = argparse.ArgumentParser(description='Cifrado César con opciones adicionales')
-    parser.add_argument('mensaje', type=str, help='Mensaje a cifrar o nombre de archivo con texto claro')
+    parser.add_argument('mensaje', type=str, help='Mensaje a cifrar')
     parser.add_argument('-o', '--output', type=str, help='Nombre del archivo de salida')
-    parser.add_argument('-f', '--file', action='store_true', help='Indica que el mensaje es un archivo')
+    parser.add_argument('-f', '--file', action='store_true', help='Indica que el mensaje está en un archivo')
     parser.add_argument('-ñ', '--enye', action='store_true', help='Usar el alfabeto con ñ')
 
     args = parser.parse_args()
