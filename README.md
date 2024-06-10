@@ -1,5 +1,5 @@
-# Criptografia
-Scripts útiles para tareas de criptografía 
+# Python
+Scripts desarrollados durante el estudio de python
 
 ## rot
 
