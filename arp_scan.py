@@ -12,7 +12,7 @@ def main():
     if parser.range:
         ip_scan(parser.range)
     else:
-        print("Write the required parameters")
+        print("Write the required parameters\nExample: sudo ./arp_scan.py -r 192.168.1.1/24")
 
 def ip_scan(ip):
     range_ip = scapy.ARP(pdst=ip)
