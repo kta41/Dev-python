@@ -1,1 +1,1 @@
-Aquí guardo los scripts en python que desarrollo en mi proceso de estudio del lenguaje, hasta ahora, centrados en herramientas útiles para auditorías de seguridad de redes
+Este repositorio contiene una serie de scripts en Python que he desarrollado como parte de mi proceso de aprendizaje del lenguaje. Los proyectos hasta ahora se centran en la creación de herramientas útiles para la auditoría de seguridad de redes, con el objetivo de automatizar y facilitar tareas clave en la evaluación de vulnerabilidades.
