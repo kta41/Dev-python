@@ -1,0 +1,44 @@
+Screen {
+    background: black;
+    color: #00FF00;
+}
+
+Header, Footer {
+    background: #004400;
+    color: #00FF00;
+}
+
+#search-bar {
+    dock: top;
+    margin: 1 1 0 1;
+    border: ascii #00FF00;
+    background: black;
+    color: #00FF00;
+}
+
+Horizontal {
+    height: 1fr;
+}
+
+#details { 
+    width: 45%; 
+    height: 100%; 
+    border: ascii #00FF00; 
+    padding: 1; 
+    overflow-y: scroll; 
+    background: black; 
+    color: #00FF00; 
+}
+
+DataTable { 
+    width: 55%; 
+    height: 100%; 
+    border: ascii #00FF00; 
+    background: black; 
+    color: #00FF00; 
+}
+
+DataTable > .datatable--cursor { 
+    background: #004400; 
+    color: #00FF00; 
+}
